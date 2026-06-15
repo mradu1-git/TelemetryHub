@@ -14,10 +14,11 @@ qt_add_executable(appTelemetryHub
 )
 
 qt_add_qml_module(appTelemetryHub
-    URI TelemetryHub
+    URI com.company.telemetry
     QML_FILES
         Main.qml
         SOURCES devicecontroller.h devicecontroller.cpp
+        SOURCES dataencryptor.h dataencryptor.cpp
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

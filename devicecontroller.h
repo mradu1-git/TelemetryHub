@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QString>
 #include <QtQml>
+#include <QQmlEngine>
 
 class DeviceController : public QObject
 {
