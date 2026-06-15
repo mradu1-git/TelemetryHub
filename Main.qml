@@ -7,18 +7,14 @@ Window {
     visible: true
     title: "Production Telemetry Hub"
 
-    // Instantiate our custom C++ Proxy Element
     LogFilterProxyModel {
         id: logProxy
     }
-
     Column {
         anchors.fill: parent
         anchors.margins: 20
-        spacing: 15
-
-        // Module 4: Custom Visual Element bound directly to input sliders
         StatusPieChart {
+            id: visualChart
             width: 120
             height: 120
             color: "darkslateblue"
@@ -35,7 +31,6 @@ Window {
             anchors.horizontalCenter: parent.horizontalCenter
         }
 
-        // Module 6 & 7: Proxy Filtering Input Row Layout Elements
         Row {
             spacing: 10
             width: parent.width
@@ -53,26 +48,23 @@ Window {
             }
         }
 
-        // Module 5: Performance ListView fed safely through the Proxy pipe
         ListView {
             width: parent.width
             height: 230
             clip: true
             model: logProxy
-
             delegate: ItemDelegate {
                 width: parent.width
-
                 contentItem: Row {
                     spacing: 15
-                    Text { text: model.timestamp; color: "gray" }
+                    Text {text: model.timestamp; color: "gray"}
                     Text {
                         text: "[" + model.level + "]"
                         font.bold: true
                         width: 65
                         color: model.level === "ERROR" ? "red" : (model.level === "WARN" ? "orange" : "green")
                     }
-                    Text { text: model.message }
+                    Text {text: model.message}
                 }
             }
         }
@@ -80,7 +72,7 @@ Window {
         Button {
             text: "Generate Mock Live Error"
             anchors.horizontalCenter: parent.horizontalCenter
-            onClicked: logProxy.generateFakeLog("Core engine temperature exceeded 95°C threshold", "ERROR")
+            onClicked: logProxy.generateFakeLog("Core Engine temperature exceeded 95 C threshold", "ERROR")
         }
     }
 }
