@@ -21,6 +21,7 @@ public:
     qreal fillAngle() const;
     void setFillAngle(qreal newAngle);
 
+    StatusPieChart();
 signals:
     void colorChanged();
     void fillAngleChanged();
