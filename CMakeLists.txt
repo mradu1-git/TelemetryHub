@@ -21,6 +21,7 @@ qt_add_qml_module(appTelemetryHub
         SOURCES dataencryptor.h dataencryptor.cpp
         SOURCES statuspiechart.h statuspiechart.cpp
         SOURCES telemetrylogmodel.h telemetrylogmodel.cpp
+        SOURCES logfilterproxymodel.h logfilterproxymodel.cpp
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

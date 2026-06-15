@@ -26,11 +26,11 @@ void StatusPieChart::setColor(const QColor &newColor) {
     update();
 }
 
-qreal StatusPieChart::fillAngle() const {
+int StatusPieChart::fillAngle() const {
     return m_fillAngle;
 }
 
-void StatusPieChart::setFillAngle(qreal newAngle) {
+void StatusPieChart::setFillAngle(int newAngle) {
     if (qFuzzyCompare(m_fillAngle, newAngle)) return;
     m_fillAngle = newAngle;
     emit fillAngleChanged();
