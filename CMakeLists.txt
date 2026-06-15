@@ -14,7 +14,7 @@ qt_add_executable(appTelemetryHub
 )
 
 qt_add_qml_module(appTelemetryHub
-    URI com.company.telemetry
+    URI TelemetryHub
     QML_FILES
         Main.qml
         SOURCES devicecontroller.h devicecontroller.cpp

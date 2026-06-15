@@ -31,7 +31,7 @@ int StatusPieChart::fillAngle() const {
 }
 
 void StatusPieChart::setFillAngle(int newAngle) {
-    if (qFuzzyCompare(m_fillAngle, newAngle)) return;
+    if (m_fillAngle == newAngle) return;
     m_fillAngle = newAngle;
     emit fillAngleChanged();
     update();

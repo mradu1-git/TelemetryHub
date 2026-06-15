@@ -15,7 +15,7 @@ void LogFilterProxyModel::generateFakeLog(const QString &msg, const QString &lev
     m_sourceModel->appendLog(msg, level);
 }
 
-void LogFilterProxyModel::setFilterText(const QString text) {
+void LogFilterProxyModel::setFilterText(const QString &text) {
     setFilterRole(TelemetryLogModel::MessageRole);
     setFilterFixedString(text);
 }
