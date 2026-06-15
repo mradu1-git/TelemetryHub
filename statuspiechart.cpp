@@ -1,7 +1,10 @@
 #include "statuspiechart.h"
 #include <QPainter>
 
-StatusPieChart::StatusPieChart(QQuickItem *parent) : QQuickPaintedItem(parent), m_color(Qt::green), m_fillAngle(90.0) {}
+StatusPieChart::StatusPieChart(QQuickItem *parent) : QQuickPaintedItem(parent), m_color(Qt::green), m_fillAngle(90.0) {
+    setImplicitWidth(100);
+    setImplicitHeight(100);
+}
 
 void StatusPieChart::paint(QPainter *painter) {
     painter->setRenderHint(QPainter::Antialiasing, true);

@@ -20,8 +20,6 @@ public:
 
     int fillAngle() const;
     void setFillAngle(int newAngle);
-
-    StatusPieChart();
 signals:
     void colorChanged();
     void fillAngleChanged();
