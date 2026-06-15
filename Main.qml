@@ -5,12 +5,11 @@ Window {
     width: 400
     height: 300
     visible: true
-    title: "Interview Project Test"
+    title: "Simplified Interview Test"
 
-    // NO IMPORT NEEDED HERE! Because DeviceController has QML_ELEMENT
-    // and is in the same CMake target, it is available automatically.
-    DeviceController {
-        id: backendDevice
+    // Only instantiating the non-visual processing item
+    DataEncryptor {
+        id: encryptor
     }
 
     Column {
@@ -18,19 +17,19 @@ Window {
         spacing: 20
 
         Text {
-            text: "Current Temperature: " + backendDevice.temperature + "°C"
-            font.pixelSize: 18
+            text: "C++ Integration Test"
+            font.pointSize: 16
+            anchors.horizontalCenter: parent.horizontalCenter
         }
 
-        Text {
-            text: "Status: " + backendDevice.connectionStatus
-            font.pixelSize: 16
-            color: "blue"
-        }
-
+        // Standard QML Button — zero custom rendering required
         Button {
-            text: "Reset System Metrics"
-            onClicked: backendDevice.resetDevice()
+            text: "Run C++ Encryptor"
+            anchors.horizontalCenter: parent.horizontalCenter
+            onClicked: {
+                var result = encryptor.encryptData("Hello")
+                console.log("C++ Output: " + result)
+            }
         }
     }
 }

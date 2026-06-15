@@ -15,6 +15,10 @@ void StatusPieChart::paint(QPainter *painter) {
     painter->drawPie(rect, startAngle, spanAngle);
 }
 
+QColor StatusPieChart::color() const {
+    return m_color;
+}
+
 void StatusPieChart::setColor(const QColor &newColor) {
     if (m_color == newColor) return;
     m_color = newColor;

@@ -13,7 +13,7 @@ class StatusPieChart : public QQuickPaintedItem
 
     QML_ELEMENT
 public:
-    explicit StatusPieChart(QQuickItem *parent = nullptr) ;
+    StatusPieChart(QQuickItem *parent = nullptr) ;
     void paint(QPainter *painter) override;
     QColor color() const;
     void setColor(const QColor &newColor);
